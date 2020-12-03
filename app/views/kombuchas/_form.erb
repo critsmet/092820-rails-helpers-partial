@@ -1,0 +1,23 @@
+<%= render partial: 'layouts/errors', locals: {instance: @kombucha} %>
+
+<%= form_with model: @kombucha, local: true do |f| %>
+  <%= f.label :flavor %>
+  <%= f.text_field  :flavor%>
+  <br>
+  <%= f.label :brew_time %>
+  <%= f.number_field :brew_time %>
+  <br>
+  <%= f.label :notes %>
+  <%= f.text_area :notes %>
+  <br>
+  <%= f.label :brand %>
+  <%= f.collection_select :brand_id, @brands, :id, :name %>
+  <br>
+  <p>Don't see the brand? Make a new one!</p>
+  <%= f.fields_for :brand do |bf| %>
+    <%= bf.label :name %>
+    <%= bf.text_field :name %>
+  <% end %>
+  <br>
+  <%= f.submit %>
+<% end %>

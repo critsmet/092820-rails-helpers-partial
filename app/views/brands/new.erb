@@ -1,0 +1,24 @@
+<h2>Make A New Brand</h2>
+
+<%= verify_that_user_is_owner_of_record %>
+
+<%= form_with model: @brand do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <p>Make First Kombucha!</p>
+  <br>
+  <%= f.fields_for :kombuchas do |kf| %>
+    <%= kf.label :flavor %>
+    <%= kf.text_field  :flavor%>
+    <br>
+    <%= kf.label :brew_time %>
+    <%= kf.number_field :brew_time %>
+    <br>
+    <%= kf.label :notes %>
+    <%= kf.text_area :notes %>
+    <br>
+  <% end %>
+  <br>
+  <%= f.submit %>
+<% end %>

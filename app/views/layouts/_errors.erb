@@ -1,0 +1,11 @@
+<% if !instance.errors.full_messages.empty? %>
+  <div>
+    Errors:
+    <ul>
+      <% instance.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+  <br>
+<% end %>

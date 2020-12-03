@@ -1,0 +1,12 @@
+<h2><%= @kombucha.flavor %></h2>
+
+<h3>Brew Time: <%= @kombucha.brew_time %></h3>
+
+<h3>Brand: <%= @kombucha.brand.name %></h3>
+
+<%= kombucha_notes(@kombucha) %>
+<br>
+<br>
+
+
+<%# <%= verify_that_user_is_owner_of_kombucha(@kombucha, current_user) ? link_to "Edit!", edit_kombucha_path(@kombucha) : null %>
